@@ -8,8 +8,12 @@ set nocompatible
 " Use tpope's pathogen plugin to manage all other plugins
 
 filetype off                    " force reloading *after* pathogen loaded
-call pathogen#infect()
-call pathogen#helptags()
+try
+  call pathogen#infect()
+  call pathogen#helptags()
+catch
+  "
+endtry
 filetype plugin indent on       " enable detection, plugins and indenting in one step
 syntax on
 
