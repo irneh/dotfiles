@@ -129,7 +129,12 @@ set textwidth=80
 set mouse=a
 
 
-color sahara "mustang
+try
+  colorscheme sahara "mustang
+catch
+  colorscheme desert
+endtry
+
 syntax enable
 
 map <CR> O<Esc>j
