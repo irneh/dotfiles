@@ -79,8 +79,10 @@ set linebreak    "Wrap lines at convenient points
 " ================ Folds ============================
 
 set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
+set foldnestmax=2       "deepest fold is 2 levels
 set nofoldenable        "dont fold by default
+nnoremap <Space> za
+vnoremap <Space> za
 
 " ================ Completion =======================
 
@@ -142,7 +144,6 @@ endtry
 
 syntax enable
 
-map <CR> O<Esc>j
 nnoremap ; :
 let mapleader=","
 nmap <silent> ,/ :nohlsearch<CR>
@@ -191,9 +192,11 @@ function! s:align()
   endif
 endfunction
 
-map <C-Tab> :bnext<cr>
-
-nnoremap gp `[v`]
+map <C-p> :bprev<CR>
+map <C-n> :bnext<CR>
 
 nnoremap p ]p
 nnoremap ]p p
+
+"map <CR> O<Esc>j
+nnoremap <CR> :BufExplorer<CR>
